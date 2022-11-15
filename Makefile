@@ -6,16 +6,16 @@
 ##   By: mnouchet <mnouchet>                        +#+  +:+       +#+        ##
 ##                                                +#+#+#+#+#+   +#+           ##
 ##   Created: 2022/11/15 10:56:41 by mnouchet          #+#    #+#             ##
-##   Updated: 2022/11/15 11:04:17 by mnouchet         ###   ########.fr       ##
+##   Updated: 2022/11/15 19:23:28 by mnouchet         ###   ########.fr       ##
 ##                                                                            ##
 ## ########################################################################## ##
 
 NAME = libprintf.a
 
-SOURCES_DIR = ./src
+SOURCES_DIR = ./srcs
 SOURCES = main.c
 
-INCLUDES_DIR = ./include
+INCLUDES_DIR = ./includes
 
 CC = cc
 CFLAGS = -Wall -Werror -Wextra
