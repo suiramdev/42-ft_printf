@@ -6,12 +6,12 @@
 /*   By: mnouchet <mnouchet>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 11:02:29 by mnouchet          #+#    #+#             */
-/*   Updated: 2022/11/16 18:30:00 by mnouchet         ###   ########.fr       */
+/*   Updated: 2022/11/16 19:08:38 by mnouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
-#include <unistd.h>
+#include <stdarg.h>
 #include "handlers.h"
 #include "string.h"
 #include "display.h"
@@ -21,24 +21,24 @@ int handle_flag(const char *format, t_specifier *specifier)
 	return (0);
 }
 
-int	handle_type(const char *format, t_specifier *specifier)
+int	handle_type(const char *format, va_list args, t_specifier *specifier)
 {
 	if (*format == 'c')
-		display_char(*(char *)specifier->arg);
+		display_char(va_arg(args, int));
 	else if (*format == 's')
-		display_str((char *)specifier->arg);
+		display_str(va_arg(args, char *));
 	else if (*format == 'p')
-		display_ptr(specifier->arg);
+		display_ptr(va_arg(args, void *));
 	else if (*format == 'd')
-		display_nbr(*(int *)specifier->arg);
+		display_nbr(va_arg(args, int));
 	else if (*format == 'i')
-		display_nbr(*(int *)specifier->arg);
+		display_nbr(va_arg(args, int));
 	else if (*format == 'u')
-		display_unbr(*(unsigned int *)specifier->arg);
+		display_unbr(va_arg(args, unsigned int));
 	else if (*format == 'x')
-		display_as(*(int *)specifier->arg, "0123456789abcdef");
+		display_as(va_arg(args, int), "0123456789abcdef");
 	else if (*format == 'X')
-		display_as(*(int *)specifier->arg, "0123456789ABCDEF");
+		display_as(va_arg(args, int), "0123456789ABCDEF");
 	else if (*format == '%')
 		display_char('%');
 	else

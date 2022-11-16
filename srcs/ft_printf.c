@@ -6,7 +6,7 @@
 /*   By: mnouchet <mnouchet>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 11:04:46 by mnouchet          #+#    #+#             */
-/*   Updated: 2022/11/16 18:27:50 by mnouchet         ###   ########.fr       */
+/*   Updated: 2022/11/16 19:09:05 by mnouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,8 @@ int	ft_printf(const char *format, ...)
 			specifier = malloc(sizeof(t_specifier));
 			if (specifier)
 			{
-				specifier->arg = va_arg(args, void *);
 				i += handle_flag(format + i, specifier);
-				i += handle_type(format + i, specifier);
+				i += handle_type(format + i, args, specifier);
 				free(specifier);
 			}
 			continue;

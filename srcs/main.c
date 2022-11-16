@@ -6,7 +6,7 @@
 /*   By: mnouchet <mnouchet>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 11:14:21 by mnouchet          #+#    #+#             */
-/*   Updated: 2022/11/16 17:35:59 by mnouchet         ###   ########.fr       */
+/*   Updated: 2022/11/16 19:09:36 by mnouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,5 @@ int	main(void)
 	ft_printf("u : %u\n", -100);
 	ft_printf("x : %x\n", 25);
 	ft_printf("X : %X\n", 25);
-	ft_printf("% : %%\n", 25);
+	ft_printf("%% : %%\n");
 }
