@@ -1,31 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   display.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mnouchet <mnouchet>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/16 11:14:21 by mnouchet          #+#    #+#             */
-/*   Updated: 2022/11/16 17:35:59 by mnouchet         ###   ########.fr       */
+/*   Created: 2022/11/16 16:44:28 by mnouchet          #+#    #+#             */
+/*   Updated: 2022/11/16 18:21:30 by mnouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include "ft_printf.h"
+#ifndef DISPLAY_H
+# define DISPLAY_H
 
-int	main(void)
-{
-	void	*ptr;
+#include <stddef.h>
 
-	ft_printf("c : %c\n", 'a');
-	ft_printf("s : %s\n", "Hello World");
-	ptr = malloc(1);
-	ft_printf("p : %p\n", ptr);
-	free(ptr);
-	ft_printf("d : %d\n", 100); // to fix
-	ft_printf("i : %i\n", 100);
-	ft_printf("u : %u\n", -100);
-	ft_printf("x : %x\n", 25);
-	ft_printf("X : %X\n", 25);
-	ft_printf("% : %%\n", 25);
-}
+size_t	display_char(char c);
+size_t	display_str(const char *s);
+size_t	display_nbr(int nbr);
+size_t	display_unbr(unsigned int nbr);
+size_t	display_ptr(void *ptr);
+size_t	display_as(int nbr, const char *base);
+
+#endif

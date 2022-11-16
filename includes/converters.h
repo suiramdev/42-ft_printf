@@ -1,31 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   converters.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mnouchet <mnouchet>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/16 11:14:21 by mnouchet          #+#    #+#             */
-/*   Updated: 2022/11/16 17:35:59 by mnouchet         ###   ########.fr       */
+/*   Created: 2022/11/16 13:43:27 by mnouchet          #+#    #+#             */
+/*   Updated: 2022/11/16 16:29:27 by mnouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include "ft_printf.h"
+#ifndef CONVERTERS_H
+# define CONVERTERS_H
 
-int	main(void)
-{
-	void	*ptr;
+char	*ft_itoa_base(long nbr, const char *base);
 
-	ft_printf("c : %c\n", 'a');
-	ft_printf("s : %s\n", "Hello World");
-	ptr = malloc(1);
-	ft_printf("p : %p\n", ptr);
-	free(ptr);
-	ft_printf("d : %d\n", 100); // to fix
-	ft_printf("i : %i\n", 100);
-	ft_printf("u : %u\n", -100);
-	ft_printf("x : %x\n", 25);
-	ft_printf("X : %X\n", 25);
-	ft_printf("% : %%\n", 25);
-}
+#endif
