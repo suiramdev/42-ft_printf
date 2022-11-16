@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   format.c                                           :+:      :+:    :+:   */
+/*   string.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mnouchet <mnouchet>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/15 11:19:32 by mnouchet          #+#    #+#             */
-/*   Updated: 2022/11/15 13:12:55 by mnouchet         ###   ########.fr       */
+/*   Created: 2022/11/16 11:03:20 by mnouchet          #+#    #+#             */
+/*   Updated: 2022/11/16 11:12:54 by mnouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdarg.h>
+#include <stddef.h>
 
-char	*format(const char *format, va_list args)
+size_t	ft_strlen(const char *str)
 {
-	char	*output;
+	const char *s;
 
-	return (output);
+	s = str;
+	while (*s)
+		s++;
+	return (s - str);
 }

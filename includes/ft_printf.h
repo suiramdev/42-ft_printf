@@ -1,22 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mnouchet <mnouchet>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/15 11:04:46 by mnouchet          #+#    #+#             */
-/*   Updated: 2022/11/15 11:23:52 by mnouchet         ###   ########.fr       */
+/*   Created: 2022/11/16 11:14:42 by mnouchet          #+#    #+#             */
+/*   Updated: 2022/11/16 11:15:07 by mnouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdarg.h>
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
-int	ft_printf(const char *format, ...)
-{
-	va_list	args;
+int	ft_printf(const char *format, ...);
 
-	va_start(args, format);
-	va_end(args);
-	return (0);
-}
+#endif

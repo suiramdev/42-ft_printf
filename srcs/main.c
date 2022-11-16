@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   handlers.h                                         :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mnouchet <mnouchet>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/15 20:25:13 by mnouchet          #+#    #+#             */
-/*   Updated: 2022/11/16 11:01:43 by mnouchet         ###   ########.fr       */
+/*   Created: 2022/11/16 11:14:21 by mnouchet          #+#    #+#             */
+/*   Updated: 2022/11/16 11:15:45 by mnouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HANDLERS_H
-# define HANDLERS_H
+#include "ft_printf.h"
 
-typedef struct	s_specifier
+int	main(void)
 {
-	void	*arg;
-	int		flag;
-}	t_specifier;
-
-int	handle_flag(const char *format, t_specifier *specifier);
-int	handle_type(const char *format, t_specifier *specifier);
-
-#endif
+	ft_printf("hello %s", "world");
+}

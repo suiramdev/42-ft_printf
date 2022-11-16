@@ -1,18 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   formats.h                                          :+:      :+:    :+:   */
+/*   string.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mnouchet <mnouchet>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/15 20:54:47 by mnouchet          #+#    #+#             */
-/*   Updated: 2022/11/15 20:59:00 by mnouchet         ###   ########.fr       */
+/*   Created: 2022/11/16 11:07:35 by mnouchet          #+#    #+#             */
+/*   Updated: 2022/11/16 11:12:43 by mnouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FORMATS_H
-# define FORMATS_H
+#ifndef STRING_H
+# define STRING_H
 
-# define FORMAT_TYPES cspdiuxX%
+#include <stddef.h>
+
+size_t	ft_strlen(const char *str);
 
 #endif
