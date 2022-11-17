@@ -6,7 +6,7 @@
 /*   By: mnouchet <mnouchet>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 16:44:03 by mnouchet          #+#    #+#             */
-/*   Updated: 2022/11/16 18:21:40 by mnouchet         ###   ########.fr       */
+/*   Updated: 2022/11/17 12:12:20 by mnouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,9 @@ size_t	display_ptr(void *ptr)
 
 	if (!ptr)
 		return (write(1, "(nil)", 5));
+	bytes = write(1, "0x", 2);
+	converted = ft_itoa_base((long)ptr, "0123456789abcdef");
+	bytes += write(1, converted, ft_strlen(converted));
 	return (bytes);
 }
 

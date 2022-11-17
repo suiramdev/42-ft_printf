@@ -6,7 +6,7 @@
 /*   By: mnouchet <mnouchet>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 13:39:05 by mnouchet          #+#    #+#             */
-/*   Updated: 2022/11/16 19:10:47 by mnouchet         ###   ########.fr       */
+/*   Updated: 2022/11/17 12:02:49 by mnouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ char	*ft_itoa_base(long nbr, const char *base)
 		output[digits + negative] = '\0';
 		while (digits > 0)
 		{
-			output[digits - negative] = base[nbr % base_len];
+			output[digits + negative - 1] = base[nbr % base_len];
 			nbr /= base_len;
 			digits--;
 		}
