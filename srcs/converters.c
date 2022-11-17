@@ -6,7 +6,7 @@
 /*   By: mnouchet <mnouchet>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 13:39:05 by mnouchet          #+#    #+#             */
-/*   Updated: 2022/11/17 12:02:49 by mnouchet         ###   ########.fr       */
+/*   Updated: 2022/11/17 12:22:38 by mnouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 static size_t	ft_digits(long nbr, int base_len)
 {
-	size_t digits;
+	size_t	digits;
 
 	if (nbr == 0)
 		return (1);

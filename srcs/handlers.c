@@ -6,7 +6,7 @@
 /*   By: mnouchet <mnouchet>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 11:02:29 by mnouchet          #+#    #+#             */
-/*   Updated: 2022/11/17 12:05:44 by mnouchet         ###   ########.fr       */
+/*   Updated: 2022/11/17 12:27:31 by mnouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 #include <stdarg.h>
 #include "handlers.h"
 #include "string.h"
-#include "display.h"
+#include "displaystr.h"
+#include "displaynbr.h"
 
-int handle_flag(const char *format, t_specifier *specifier)
+int	handle_flag(const char *format, t_specifier *specifier)
 {
 	return (0);
 }
