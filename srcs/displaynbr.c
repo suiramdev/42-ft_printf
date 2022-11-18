@@ -6,7 +6,7 @@
 /*   By: mnouchet <mnouchet>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 12:24:15 by mnouchet          #+#    #+#             */
-/*   Updated: 2022/11/18 16:45:14 by mnouchet         ###   ########.fr       */
+/*   Updated: 2022/11/18 17:09:35 by mnouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ size_t	display_ptr(void *ptr)
 	if (!ptr)
 		return (write(1, "(nil)", 5));
 	bytes = 0;
-	converted = ft_ultop((unsigned long)ptr); 
+	converted = ft_ultop((unsigned long)ptr);
 	if (converted)
 		bytes = write(1, converted, ft_strlen(converted));
 	free(converted);

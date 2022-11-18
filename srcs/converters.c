@@ -6,7 +6,7 @@
 /*   By: mnouchet <mnouchet>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 13:39:05 by mnouchet          #+#    #+#             */
-/*   Updated: 2022/11/18 16:39:14 by mnouchet         ###   ########.fr       */
+/*   Updated: 2022/11/18 17:14:01 by mnouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,16 +44,15 @@ char	*ft_ltob(long nbr, const char *base)
 	digits = ft_digits(u_nbr, base_len);
 	output = malloc(digits + negative + 1);
 	if (output)
+		return (NULL);
+	if (negative)
+		output[0] = '-';
+	output[digits + negative] = '\0';
+	while (digits > 0)
 	{
-		if (negative)
-			output[0] = '-';
-		output[digits + negative] = '\0';
-		while (digits > 0)
-		{
-			output[digits + negative - 1] = base[u_nbr % base_len];
-			u_nbr /= base_len;
-			digits--;
-		}
+		output[digits + negative - 1] = base[u_nbr % base_len];
+		u_nbr /= base_len;
+		digits--;
 	}
 	return (output);
 }
@@ -66,16 +65,15 @@ char	*ft_ultop(unsigned long nbr)
 	digits = ft_digits(nbr, 16);
 	output = malloc(digits + 2 + 1);
 	if (output)
+		return (NULL);
+	output[digits + 2] = '\0';
+	output[0] = '0';
+	output[1] = 'x';
+	while (digits > 0)
 	{
-		output[digits + 2] = '\0';
-		output[0] = '0';
-		output[1] = 'x';
-		while (digits > 0)
-		{
-			output[digits + 1] = "0123456789abcdef"[nbr % 16];
-			nbr /= 16;
-			digits--;
-		}
+		output[digits + 1] = "0123456789abcdef"[nbr % 16];
+		nbr /= 16;
+		digits--;
 	}
 	return (output);
 }
