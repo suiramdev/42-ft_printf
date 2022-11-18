@@ -6,11 +6,11 @@
 ##   By: mnouchet <mnouchet>                        +#+  +:+       +#+        ##
 ##                                                +#+#+#+#+#+   +#+           ##
 ##   Created: 2022/11/15 10:56:41 by mnouchet          #+#    #+#             ##
-##   Updated: 2022/11/17 12:57:09 by mnouchet         ###   ########.fr       ##
+##   Updated: 2022/11/18 12:30:58 by mnouchet         ###   ########.fr       ##
 ##                                                                            ##
 ## ########################################################################## ##
 
-NAME = libprintf.a
+NAME = libftprintf.a
 
 SOURCES_DIR = ./srcs
 SOURCES = ft_printf.c handlers.c converters.c string.c \
@@ -29,6 +29,8 @@ OBJECTS = $(addprefix $(SOURCES_DIR)/, $(SOURCES:%.c=%.o))
 $(NAME): $(OBJECTS)
 	ar -rsc $@ $^
 
+bonus: $(NAME)
+
 clean:
 	rm -rf $(OBJECTS)
 
@@ -36,3 +38,5 @@ fclean: clean
 	rm -rf $(NAME)
 
 all: $(NAME)
+
+.PHONY = all bonus clean fclean

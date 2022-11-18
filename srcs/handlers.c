@@ -6,7 +6,7 @@
 /*   By: mnouchet <mnouchet>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 11:02:29 by mnouchet          #+#    #+#             */
-/*   Updated: 2022/11/17 13:01:03 by mnouchet         ###   ########.fr       */
+/*   Updated: 2022/11/18 16:44:59 by mnouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,24 +17,7 @@
 #include "displaystr.h"
 #include "displaynbr.h"
 
-size_t	handle_all(const char *format, va_list *args,
-	t_specifier *specifier, size_t *count)
-{
-	size_t	i;
-
-	i = 0;
-	i += handle_flag(format, specifier, count);
-	i += handle_type(format, args, specifier, count);
-	return (i);
-}
-
-size_t	handle_flag(const char *format, t_specifier *specifier, size_t *count)
-{
-	return (0);
-}
-
-size_t	handle_type(const char *format, va_list *args,
-	t_specifier *specifier, size_t *count)
+size_t	handle_type(const char *format, va_list *args, size_t *count)
 {
 	if (*format == 'c')
 		*count += display_char(va_arg(*args, int));
@@ -49,9 +32,9 @@ size_t	handle_type(const char *format, va_list *args,
 	else if (*format == 'u')
 		*count += display_unbr(va_arg(*args, unsigned int));
 	else if (*format == 'x')
-		*count += display_as(va_arg(*args, int), "0123456789abcdef");
+		*count += display_as(va_arg(*args, long), "0123456789abcdef");
 	else if (*format == 'X')
-		*count += display_as(va_arg(*args, int), "0123456789ABCDEF");
+		*count += display_as(va_arg(*args, long), "0123456789ABCDEF");
 	else if (*format == '%')
 		*count += display_char('%');
 	else
