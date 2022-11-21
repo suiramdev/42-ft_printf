@@ -6,7 +6,7 @@
 /*   By: mnouchet <mnouchet>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 13:39:05 by mnouchet          #+#    #+#             */
-/*   Updated: 2022/11/18 17:14:01 by mnouchet         ###   ########.fr       */
+/*   Updated: 2022/11/21 14:23:12 by mnouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ char	*ft_ltob(long nbr, const char *base)
 		u_nbr = -nbr;
 	digits = ft_digits(u_nbr, base_len);
 	output = malloc(digits + negative + 1);
-	if (output)
+	if (!output)
 		return (NULL);
 	if (negative)
 		output[0] = '-';
@@ -57,6 +57,8 @@ char	*ft_ltob(long nbr, const char *base)
 	return (output);
 }
 
+#include <stdio.h>
+
 char	*ft_ultop(unsigned long nbr)
 {
 	size_t	digits;
@@ -64,7 +66,7 @@ char	*ft_ultop(unsigned long nbr)
 
 	digits = ft_digits(nbr, 16);
 	output = malloc(digits + 2 + 1);
-	if (output)
+	if (!output)
 		return (NULL);
 	output[digits + 2] = '\0';
 	output[0] = '0';

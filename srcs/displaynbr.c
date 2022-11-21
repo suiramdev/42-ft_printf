@@ -6,7 +6,7 @@
 /*   By: mnouchet <mnouchet>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 12:24:15 by mnouchet          #+#    #+#             */
-/*   Updated: 2022/11/18 17:09:35 by mnouchet         ###   ########.fr       */
+/*   Updated: 2022/11/21 14:24:26 by mnouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ size_t	display_unbr(unsigned int nbr)
 	free(converted);
 	return (bytes);
 }
+
+#include "stdio.h"
 
 size_t	display_ptr(void *ptr)
 {
