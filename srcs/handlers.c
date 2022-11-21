@@ -6,7 +6,7 @@
 /*   By: mnouchet <mnouchet>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 11:02:29 by mnouchet          #+#    #+#             */
-/*   Updated: 2022/11/18 16:44:59 by mnouchet         ###   ########.fr       */
+/*   Updated: 2022/11/21 15:49:59 by mnouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ size_t	handle_type(const char *format, va_list *args, size_t *count)
 	else if (*format == 'u')
 		*count += display_unbr(va_arg(*args, unsigned int));
 	else if (*format == 'x')
-		*count += display_as(va_arg(*args, long), "0123456789abcdef");
+		*count += display_hex(va_arg(*args, long), "0123456789abcdef");
 	else if (*format == 'X')
-		*count += display_as(va_arg(*args, long), "0123456789ABCDEF");
+		*count += display_hex(va_arg(*args, long), "0123456789ABCDEF");
 	else if (*format == '%')
 		*count += display_char('%');
 	else

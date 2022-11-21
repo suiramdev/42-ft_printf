@@ -6,7 +6,7 @@
 /*   By: mnouchet <mnouchet>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 12:25:28 by mnouchet          #+#    #+#             */
-/*   Updated: 2022/11/17 12:26:06 by mnouchet         ###   ########.fr       */
+/*   Updated: 2022/11/21 15:49:44 by mnouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 # include <stddef.h>
 
+size_t	display_hex(long nbr, const char *base);
 size_t	display_nbr(int nbr);
 size_t	display_unbr(unsigned int nbr);
 size_t	display_ptr(void *ptr);
-size_t	display_as(int nbr, const char *base);
 
 #endif
