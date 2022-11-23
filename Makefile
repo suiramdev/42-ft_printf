@@ -6,7 +6,7 @@
 ##   By: mnouchet <mnouchet>                        +#+  +:+       +#+        ##
 ##                                                +#+#+#+#+#+   +#+           ##
 ##   Created: 2022/11/15 10:56:41 by mnouchet          #+#    #+#             ##
-##   Updated: 2022/11/21 15:50:30 by mnouchet         ###   ########.fr       ##
+##   Updated: 2022/11/23 15:20:02 by mnouchet         ###   ########.fr       ##
 ##                                                                            ##
 ## ########################################################################## ##
 
@@ -38,4 +38,6 @@ fclean: clean
 
 all: $(NAME)
 
-.PHONY = all bonus clean fclean
+re: fclean all 
+
+.PHONY = bonus clean fclean all re
