@@ -6,15 +6,15 @@
 /*   By: mnouchet <mnouchet>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 12:24:15 by mnouchet          #+#    #+#             */
-/*   Updated: 2022/11/21 15:49:26 by mnouchet         ###   ########.fr       */
+/*   Updated: 2022/11/24 05:06:38 by mnouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <limits.h>
-#include "string.h"
+#include "ft_strlen.h"
 
-size_t	display_hex(unsigned long nbr, const char *base)
+size_t	display_as(unsigned int nbr, const char *base)
 {
 	size_t	base_len;
 	size_t	bytes;
@@ -25,7 +25,7 @@ size_t	display_hex(unsigned long nbr, const char *base)
 	c = base[nbr % base_len];
 	nbr /= base_len;
 	if (nbr > 0)
-		bytes += display_hex(nbr, base);
+		bytes += display_as(nbr, base);
 	write(1, &c, 1);
 	return (bytes);
 }
@@ -65,13 +65,22 @@ size_t	display_unbr(unsigned int nbr)
 	return (bytes);
 }
 
-size_t	display_ptr(void *ptr)
+size_t	display_ptr(unsigned long ptr, int recursive)
 {
 	size_t	bytes;
+	char	c;
 
-	if (!ptr)
-		return (write(1, "(nil)", 5));
-	bytes = write(1, "0x", 2);
-	bytes += display_hex((unsigned long)ptr, "0123456789abcdef");
+	bytes = 1;
+	if (!recursive)
+	{
+		if (!ptr)
+			return (write(1, "(nil)", 5));
+		bytes += write(1, "0x", 2);
+	}
+	c = "0123456789abcdef"[ptr % 16];
+	ptr /= 16;
+	if (ptr > 0)
+		bytes += display_ptr(ptr, 1);
+	write(1, &c, 1);
 	return (bytes);
 }

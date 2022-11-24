@@ -6,12 +6,12 @@
 /*   By: mnouchet <mnouchet>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 12:24:15 by mnouchet          #+#    #+#             */
-/*   Updated: 2022/11/21 15:48:53 by mnouchet         ###   ########.fr       */
+/*   Updated: 2022/11/24 03:40:04 by mnouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include "string.h"
+#include "ft_strlen.h"
 
 size_t	display_char(char c)
 {

@@ -6,14 +6,14 @@
 ##   By: mnouchet <mnouchet>                        +#+  +:+       +#+        ##
 ##                                                +#+#+#+#+#+   +#+           ##
 ##   Created: 2022/11/15 10:56:41 by mnouchet          #+#    #+#             ##
-##   Updated: 2022/11/23 15:20:02 by mnouchet         ###   ########.fr       ##
+##   Updated: 2022/11/24 03:38:46 by mnouchet         ###   ########.fr       ##
 ##                                                                            ##
 ## ########################################################################## ##
 
 NAME = libftprintf.a
 
 SOURCES_DIR = ./srcs
-SOURCES = ft_printf.c handlers.c string.c displaystr.c displaynbr.c
+SOURCES = ft_printf.c handlers.c ft_strlen.c displaystr.c displaynbr.c
 
 INCLUDES_DIR = ./includes
 
